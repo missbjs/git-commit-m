@@ -8,7 +8,7 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "bin": {
-        "git-commit--message": "./dist/bin/commit.js"
+        "git-commit-m": "./dist/bin/commit.js"
     },
     "files": [
         "dist/"
@@ -33,7 +33,7 @@
         "automation",
         "cli"
     ],
-    "author": "git-commit-m",
+    "author": "wongchichong@gmail.com",
     "license": "MIT",
     "engines": {
         "node": ">=12.0.0"

@@ -1,8 +1,12 @@
-## [unreleased]
+## [1.0.6] - 2025-09-15
 
 ### 🚀 Features
 
 - Configure public access for npm publishing
+
+### 💼 Other
+
+- *(changelog)* Automate changelog generation
 
 ### ⚙️ Miscellaneous Tasks
 
