@@ -1,6 +1,6 @@
 {
     "name": "git-commit-m",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "description": "A CLI tool that automatically generates commit messages using AI and commits changes",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -11,7 +11,8 @@
         "dist/"
     ],
     "scripts": {
-        "commit": "git-commit--m && git push",
+        "commit": "npx . && pnpm version patch && git push",
+        "npmjs": "pnpm publish",
         "build": "tsc",
         "dev": "node dist/bin/commit.js",
         "dev:help": "node dist/bin/commit.js --help",
