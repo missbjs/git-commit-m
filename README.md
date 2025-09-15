@@ -43,6 +43,20 @@ This command will:
 4. Commit with the generated message
 5. Display the time taken for the entire process
 
+### Sample Output
+
+```bash
+$ git-commit-m
+
+Adding all changes to git...
+Generating commit message with gemini...
+Commit message: feat: Change package name to `@missb/git-commit-m`
+
+The package name has been updated to `@missb/git-commit-m` in `package.json` and all corresponding references in the `README.md` have been changed from `git-commit--message` to `git-commit-m`.
+Changes committed successfully.
+Successfully processed in 14.19 seconds.
+```
+
 ### Options
 
 ```bash
