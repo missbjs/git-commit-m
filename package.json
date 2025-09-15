@@ -11,6 +11,7 @@
         "dist/"
     ],
     "scripts": {
+        "commit": "git-commit--m && git push",
         "build": "tsc",
         "dev": "node dist/bin/commit.js",
         "dev:help": "node dist/bin/commit.js --help",
