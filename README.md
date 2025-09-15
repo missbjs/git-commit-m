@@ -1,39 +1,39 @@
-# git-commit-m
+# git-commit--message
 
 A CLI tool that automatically generates commit messages using AI and commits changes.
 
 ## Installation
 
 ```bash
-npm install -g git-commit-m
+npm install -g git-commit--message
 ```
 
 Or install with pnpm:
 
 ```bash
-pnpm install -g git-commit-m
+pnpm install -g git-commit--message
 ```
 
 Or install with yarn:
 
 ```bash
-yarn global add git-commit-m
+yarn global add git-commit--message
 ```
 
 Or use directly with npx:
 
 ```bash
-npx git-commit-m
+npx git-commit--message
 ```
 
 ## Usage
 
-### git-commit-m
+### git-commit--message
 
 Automatically generates commit messages using AI and commits changes:
 
 ```bash
-git-commit-m
+git-commit--message
 ```
 
 This command will:
@@ -46,7 +46,7 @@ This command will:
 ### Options
 
 ```bash
-Usage: git-commit-m [options]
+Usage: git-commit--message [options]
 
 CLI tool that automatically generates commit messages using AI and commits changes
 
@@ -63,31 +63,31 @@ Options:
 
 ```bash
 # Normal usage (uses gemini as default provider)
-git-commit-m
+git-commit--message
 
 # Skip git add . step
-git-commit-m --no-add-dot
+git-commit--message --no-add-dot
 # or
-git-commit-m -n
+git-commit--message -n
 
 # Use a custom prompt argument
-git-commit-m --prompt-arg "--prompt"
+git-commit--message --prompt-arg "--prompt"
 # or
-git-commit-m -p "--prompt"
+git-commit--message -p "--prompt"
 
 # Use a different AI provider
-git-commit-m --provider qwen
-git-commit-m --provider claude
-git-commit-m --provider codex
+git-commit--message --provider qwen
+git-commit--message --provider claude
+git-commit--message --provider codex
 
 # Use a specific diff file instead of generating one from git
-git-commit-m --diff path/to/diff.txt
+git-commit--message --diff path/to/diff.txt
 
 # Dry run mode - generate commit message without committing
-git-commit-m --no-commit
+git-commit--message --no-commit
 
 # Combine multiple options
-git-commit-m --no-add-dot --prompt-arg "--prompt" --provider qwen --no-commit
+git-commit--message --no-add-dot --prompt-arg "--prompt" --provider qwen --no-commit
 ```
 
 Supported providers:
