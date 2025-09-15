@@ -14,7 +14,7 @@
         "build": "tsc",
         "dev": "node dist/bin/commit.js",
         "dev:help": "node dist/bin/commit.js --help",
-        "dev:provider": "node dist/bin/commit.js --provider",
+        "show:help": "pnpm link -g && git-commit-m --help",
         "prepack": "npm run build"
     },
     "keywords": [

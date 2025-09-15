@@ -8,6 +8,18 @@ A CLI tool that automatically generates commit messages using AI and commits cha
 npm install -g git-commit-m
 ```
 
+Or install with pnpm:
+
+```bash
+pnpm install -g git-commit-m
+```
+
+Or install with yarn:
+
+```bash
+yarn global add git-commit-m
+```
+
 Or use directly with npx:
 
 ```bash
