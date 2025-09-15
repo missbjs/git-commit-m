@@ -1,39 +1,39 @@
-# git-commit--message
+# git-commit-m
 
 A CLI tool that automatically generates commit messages using AI and commits changes.
 
 ## Installation
 
 ```bash
-npm install -g git-commit--message
+npm install -g git-commit-m
 ```
 
 Or install with pnpm:
 
 ```bash
-pnpm install -g git-commit--message
+pnpm install -g git-commit-m
 ```
 
 Or install with yarn:
 
 ```bash
-yarn global add git-commit--message
+yarn global add git-commit-m
 ```
 
 Or use directly with npx:
 
 ```bash
-npx git-commit--message
+npx git-commit-m
 ```
 
 ## Usage
 
-### git-commit--message
+### git-commit-m
 
 Automatically generates commit messages using AI and commits changes:
 
 ```bash
-git-commit--message
+git-commit-m
 ```
 
 This command will:
@@ -46,7 +46,7 @@ This command will:
 ### Options
 
 ```bash
-Usage: git-commit--message [options]
+Usage: git-commit-m [options]
 
 CLI tool that automatically generates commit messages using AI and commits changes
 
@@ -63,31 +63,31 @@ Options:
 
 ```bash
 # Normal usage (uses gemini as default provider)
-git-commit--message
+git-commit-m
 
 # Skip git add . step
-git-commit--message --no-add-dot
+git-commit-m --no-add-dot
 # or
-git-commit--message -n
+git-commit-m -n
 
 # Use a custom prompt argument
-git-commit--message --prompt-arg "--prompt"
+git-commit-m --prompt-arg "--prompt"
 # or
-git-commit--message -p "--prompt"
+git-commit-m -p "--prompt"
 
 # Use a different AI provider
-git-commit--message --provider qwen
-git-commit--message --provider claude
-git-commit--message --provider codex
+git-commit-m --provider qwen
+git-commit-m --provider claude
+git-commit-m --provider codex
 
 # Use a specific diff file instead of generating one from git
-git-commit--message --diff path/to/diff.txt
+git-commit-m --diff path/to/diff.txt
 
 # Dry run mode - generate commit message without committing
-git-commit--message --no-commit
+git-commit-m --no-commit
 
 # Combine multiple options
-git-commit--message --no-add-dot --prompt-arg "--prompt" --provider qwen --no-commit
+git-commit-m --no-add-dot --prompt-arg "--prompt" --provider qwen --no-commit
 ```
 
 Supported providers:
