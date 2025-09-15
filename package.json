@@ -15,7 +15,7 @@
     ],
     "scripts": {
         "run this alone, then commit": "",
-        "this": "git-cliff && npx .",
+        "this": "git-cliff > CHANGELOG.md && npx .",
         "bump": "pnpm version patch",
         "push": "git push",
         "commit": "pnpm bump && pnpm push",
