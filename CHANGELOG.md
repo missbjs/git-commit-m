@@ -1,3 +1,8 @@
+## [1.0.7] - 2025-09-15
+
+### 🐛 Bug Fixes
+
+- *(cli)* Rename binary to git-commit-m and update author
 ## [1.0.6] - 2025-09-15
 
 ### 🚀 Features

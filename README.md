@@ -5,25 +5,25 @@ A CLI tool that automatically generates commit messages using AI and commits cha
 ## Installation
 
 ```bash
-npm install -g git-commit-m
+npm install -g @missb/git-commit-m
 ```
 
 Or install with pnpm:
 
 ```bash
-pnpm install -g git-commit-m
+pnpm install -g @missb/git-commit-m
 ```
 
 Or install with yarn:
 
 ```bash
-yarn global add git-commit-m
+yarn global add @missb/git-commit-m
 ```
 
 Or use directly with npx:
 
 ```bash
-npx git-commit-m
+npx @missb/git-commit-m
 ```
 
 ## Usage
