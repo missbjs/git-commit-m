@@ -11,10 +11,11 @@
         "dist/"
     ],
     "scripts": {
+        "run this alone, then commit": "",
         "this": "npx .",
         "bump": "pnpm version patch",
         "push": "git push",
-        "commit": "pnpm this && pnpm bump && pnpm push",
+        "commit": "pnpm bump && pnpm push",
         "npmjs": "pnpm publish",
         "build": "tsc",
         "dev": "node dist/bin/commit.js",
