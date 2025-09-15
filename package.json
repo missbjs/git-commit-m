@@ -1,5 +1,5 @@
 {
-    "name": "git-commit--message",
+    "name": "git-commit-m",
     "version": "1.0.3",
     "description": "A CLI tool that automatically generates commit messages using AI and commits changes",
     "main": "dist/index.js",
