@@ -89,8 +89,14 @@ async function commit(options) {
         catch (error) {
         }
         if (!commitMessage) {
-            console.log(chalk_1.default.yellow.bold('Failed to generate commit message. Using default message.'));
-            commitMessage = 'Update files';
+            console.log(chalk_1.default.red.bold('Failed to generate commit message.'));
+            console.log(chalk_1.default.red('Please make sure:'));
+            console.log(chalk_1.default.red('  - The AI provider (codex, gemini, etc.) is installed'));
+            console.log(chalk_1.default.red('  - You have network connectivity'));
+            console.log(chalk_1.default.red('  - Your API keys are properly configured'));
+            console.log(chalk_1.default.red('  - The AI provider is working correctly'));
+            console.log(chalk_1.default.red.bold('Exiting without committing changes.'));
+            process.exit(1);
         }
         console.log(chalk_1.default.green.bold('Commit message:'), chalk_1.default.green(commitMessage));
         if (!diffFile && !noCommit) {

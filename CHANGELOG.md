@@ -1,3 +1,8 @@
+## [1.0.8] - 2025-09-15
+
+### 🐛 Bug Fixes
+
+- *(cli)* Rename package to @missb/git-commit-m
 ## [1.0.7] - 2025-09-15
 
 ### 🐛 Bug Fixes

@@ -33,12 +33,14 @@ export async function commit(options: {
   provider?: string
   diff?: string
   noCommit?: boolean
+  noSignature?: boolean
 }): Promise<boolean> {
   const noAddDot = options.noAddDot || false
   const promptArg = options.promptArg || '-p'
   const provider = options.provider || 'gemini'
   const diffFile = options.diff
   const noCommit = options.noCommit || false
+  const noSignature = options.noSignature || false
 
   // Start timing
   const startTime = Date.now()
@@ -96,8 +98,19 @@ export async function commit(options: {
 
     // Check if we got a commit message
     if (!commitMessage) {
-      console.log(chalk.yellow.bold('Failed to generate commit message. Using default message.'))
-      commitMessage = 'Update files'
+      console.log(chalk.red.bold('Failed to generate commit message.'))
+      console.log(chalk.red('Please make sure:'))
+      console.log(chalk.red('  - The AI provider (codex, gemini, etc.) is installed'))
+      console.log(chalk.red('  - You have network connectivity'))
+      console.log(chalk.red('  - Your API keys are properly configured or authentication is set up properly'))
+      console.log(chalk.red('  - The AI provider is working correctly (test by typing e.g. "gemini" in the console)'))
+      console.log(chalk.red.bold('Exiting without committing changes.'))
+      process.exit(1)
+    }
+
+    // Add signature if not disabled
+    if (!noSignature) {
+      commitMessage += '\n\nGenerated using @missb/git-commit-m'
     }
 
     console.log(chalk.green.bold('Commit message:'), chalk.green(commitMessage))
@@ -136,6 +149,7 @@ program
   .option('--provider <provider>', chalk.yellow('specify the AI provider to use (gemini, qwen, claude, codex, continue, or any string)'), 'gemini')
   .option('--diff <file>', chalk.yellow('specify a diff file to use instead of generating one from git'))
   .option('--no-commit', chalk.yellow('dry run mode - generate commit message without committing'))
+  .option('--no-signature', chalk.yellow('disable adding signature to commit message'))
   .action(async (options) => {
     try {
       await commit(options)
