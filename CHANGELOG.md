@@ -1,3 +1,8 @@
+## [unreleased]
+
+### 🚀 Features
+
+- *(cli)* Add --no-signature flag and improve error handling
 ## [1.0.8] - 2025-09-15
 
 ### 🐛 Bug Fixes

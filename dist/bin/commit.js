@@ -51,6 +51,7 @@ async function commit(options) {
     const provider = options.provider || 'gemini';
     const diffFile = options.diff;
     const noCommit = options.noCommit || false;
+    const noSignature = options.noSignature || false;
     const startTime = Date.now();
     try {
         if (!noAddDot && !diffFile) {
@@ -93,10 +94,13 @@ async function commit(options) {
             console.log(chalk_1.default.red('Please make sure:'));
             console.log(chalk_1.default.red('  - The AI provider (codex, gemini, etc.) is installed'));
             console.log(chalk_1.default.red('  - You have network connectivity'));
-            console.log(chalk_1.default.red('  - Your API keys are properly configured'));
-            console.log(chalk_1.default.red('  - The AI provider is working correctly'));
+            console.log(chalk_1.default.red('  - Your API keys are properly configured or authentication is set up properly'));
+            console.log(chalk_1.default.red('  - The AI provider is working correctly (test by typing e.g. "gemini" in the console)'));
             console.log(chalk_1.default.red.bold('Exiting without committing changes.'));
             process.exit(1);
+        }
+        if (!noSignature) {
+            commitMessage += '\n\nGenerated using @missb/git-commit-m';
         }
         console.log(chalk_1.default.green.bold('Commit message:'), chalk_1.default.green(commitMessage));
         if (!diffFile && !noCommit) {
@@ -130,6 +134,7 @@ program
     .option('--provider <provider>', chalk_1.default.yellow('specify the AI provider to use (gemini, qwen, claude, codex, continue, or any string)'), 'gemini')
     .option('--diff <file>', chalk_1.default.yellow('specify a diff file to use instead of generating one from git'))
     .option('--no-commit', chalk_1.default.yellow('dry run mode - generate commit message without committing'))
+    .option('--no-signature', chalk_1.default.yellow('disable adding signature to commit message'))
     .action(async (options) => {
     try {
         await commit(options);
